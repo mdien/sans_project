@@ -15,3 +15,4 @@ Route::get('/', 'HomeController@index');
 Route::get('/data-table', 'HomeController@data');
 Route::get('/register', 'AuthController@register');
 Route::get('/welcome', 'AuthController@welcome');
+Route::resource('pertanyaan', 'PertanyaanController');

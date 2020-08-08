@@ -13,8 +13,8 @@ class CreatePertanyaanTable extends Migration
      */
     public function up()
     {
-        Schema::create('pertanyaan', function (Blueprint $table) {
-            $table->bigInteger('id')->autoIncrement();
+        Schema::create('pertanyaans', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->char('judul',45);
             $table->char('isi',255);
             $table->date('tanggal_dibuat');

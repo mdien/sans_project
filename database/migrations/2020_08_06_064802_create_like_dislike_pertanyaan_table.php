@@ -13,7 +13,7 @@ class CreateLikeDislikePertanyaanTable extends Migration
      */
     public function up()
     {
-        Schema::create('like_dislike_pertanyaan', function (Blueprint $table) {
+        Schema::create('like_dislike_pertanyaans', function (Blueprint $table) {
             $table->integer('poin');
             $table->primary('poin');
         });

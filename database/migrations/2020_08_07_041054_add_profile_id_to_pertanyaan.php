@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddProfileIdToKomentarJawaban extends Migration
+class AddProfileIdToPertanyaan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateAddProfileIdToKomentarJawaban extends Migration
      */
     public function up()
     {
-        Schema::create('add_profile_id_to_komentar_jawaban', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+        Schema::table('pertanyaans', function (Blueprint $table) {
+            $table->unsignedBigInteger('profile_id');
+            $table->foreign('profile_id')->references('id')->on('profiles');
         });
     }
 
@@ -26,6 +26,8 @@ class CreateAddProfileIdToKomentarJawaban extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('add_profile_id_to_komentar_jawaban');
+        Schema::table('pertanyaan', function (Blueprint $table) {
+            //
+        });
     }
 }

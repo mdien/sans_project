@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddProfileIdToLikeDislikePertanyaan extends Migration
+class AddProfileIdToKomentarPertanyaan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateAddProfileIdToLikeDislikePertanyaan extends Migration
      */
     public function up()
     {
-        Schema::create('add_profile_id_to_like_dislike_pertanyaan', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+        Schema::table('komentar_pertanyaans', function (Blueprint $table) {
+            $table->unsignedBigInteger('profile_id');
+            $table->foreign('profile_id')->references('id')->on('profiles');
         });
     }
 
@@ -26,6 +26,8 @@ class CreateAddProfileIdToLikeDislikePertanyaan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('add_profile_id_to_like_dislike_pertanyaan');
+        Schema::table('komentar_pertanyaan', function (Blueprint $table) {
+            //
+        });
     }
 }

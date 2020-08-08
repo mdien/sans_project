@@ -13,7 +13,7 @@ class CreateJawabanTable extends Migration
      */
     public function up()
     {
-        Schema::create('jawaban', function (Blueprint $table) {
+        Schema::create('jawabans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('isi',255);
             $table->date('tanggal_dibuat');

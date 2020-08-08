@@ -13,7 +13,7 @@ class CreateKomentarJawabanTable extends Migration
      */
     public function up()
     {
-        Schema::create('komentar_jawaban', function (Blueprint $table) {
+        Schema::create('komentar_jawabans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('isi',255);
             $table->date('tanggal_dibuat');
