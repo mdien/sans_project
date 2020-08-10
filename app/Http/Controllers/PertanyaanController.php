@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Pertanyaan;
 use Illuminate\Support\Facades\Validator;
 
+// Alhamdulillah sudah resource
 class PertanyaanController extends Controller
 {
     /**
